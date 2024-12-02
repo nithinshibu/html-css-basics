@@ -8,5 +8,6 @@
 
 
 
+For bold we can use either <b> or <strong> , but is recommended to use the <strong> tag because the <b> tag was used in older HTML and in HTML 5 it is recommended to use the <strong> element. 
 
-
+For italics , <i> is older , <em> is recommended instead of this.
