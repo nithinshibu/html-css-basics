@@ -11,3 +11,21 @@
 For bold we can use either <b> or <strong> , but is recommended to use the <strong> tag because the <b> tag was used in older HTML and in HTML 5 it is recommended to use the <strong> element. 
 
 For italics , <i> is older , <em> is recommended instead of this.
+
+
+--Semantic HTML--
+
+Introduced in HTML 5.
+
+Not all html elements are semantic but some are semantic elements and they do have some meaning associated with it
+<strong> element is a semantic html element and it means it is a very important element.
+<em> for emphasis
+<nav> represents that ,  it is for navigation , same for article,footer and header etc.
+<p> means paragraph
+
+Semantic HTML is used to give the elements , a meaning.
+
+SEO optimisation and helps people who depends on screen readers.
+
+
+
