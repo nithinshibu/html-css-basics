@@ -38,5 +38,36 @@ We can write CSS in 3 places
 3) External CSS
 
 
+1) Inline CSS
+<h1 style="color: blue">📘 The Code Magazine</h1>
 
+Inline styles should never be used.
 
+2) Internal CSS
+
+ <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Basics</title>
+    <style>
+      h1 {
+        color: green;
+      }
+    </style>
+  </head>
+
+It is fine to use internal css for smaller projects.
+If we have 500 lines of css code then this will not be a good approach.
+
+3) External Style
+
+We will have a separate file "style.css"
+
+and we will link that css file to the html file by :-
+
+ <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Basics</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
