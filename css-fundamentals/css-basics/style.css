@@ -142,14 +142,46 @@ li:nth-child(even) {
 /* In our current code , we can see that <p> element is not the first child of the article , instead <header> is the first child of the article */
 
 /* THIS WILL NOT WORK */
-article p:first-child {
+/* article p:first-child {
   color: blue;
-}
+} */
 
 /* But the below code will work as , we have a <p> as last child of article */
 
-article p:last-child {
+/* article p:last-child {
   color: #aaaa04;
-}
+} */
 
 /* So basically what this means is that , when we mix multiple elements  inside of a parent element then these pseudo-classes dont work really well */
+
+/*----------------------------Styling links---------------------------- */
+/* This is not a good practise , instead we need to style a pseudo class of the anchor because then it will allow us to target different states  */
+
+/* a {
+  color: #1098ad;
+} */
+
+/* By specifying the link pseudo class , this will only target the actual links , which means the <a> tag with href attribute only will be targeted  */
+
+/* L V H A  */
+/* Link Visited Hover Active */
+
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad;
+}
+
+a:hover {
+  color: #17c3de;
+  font-weight: bold;
+  text-decoration: underline dotted #17c3de;
+}
+
+a:active {
+  background-color: black;
+  font-style: italic;
+}
