@@ -29,7 +29,9 @@
           width="50"
           height="50"
         />
-        <p>Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
+        <p id="author">
+          Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+        </p>
         <img
           src="/css-fundamentals/css-basics/img/post-img.jpg"
           alt="HTML code on the screen"
@@ -95,7 +97,7 @@
     <!-- Aside Container  -->
     <aside>
       <h4>Related Posts</h4>
-      <ol>
+      <ol class="related-posts">
         <li>
           <img
             src="/css-fundamentals/css-basics/img/related-1.jpg"
@@ -104,6 +106,7 @@
             height="50"
           />
           <a href="#">How to Learn Web Development</a>
+          <p class="related-author">By Jonas</p>
         </li>
         <li>
           <img
@@ -113,9 +116,12 @@
             height="50"
           />
           <a href="#">How to Learn CSS</a>
+          <p class="related-author">By James</p>
         </li>
       </ol>
     </aside>
-    <footer><p>Copyright &copy; 2027 by the Code Magazine</p></footer>
+    <footer>
+      <p id="copyright">Copyright &copy; 2027 by the Code Magazine</p>
+    </footer>
   </body>
 </html>

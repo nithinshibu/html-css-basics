@@ -52,9 +52,9 @@ li {
 /* we need to reduce the font size of paragraph (child) inside the footer (parent) */
 /* This is called descendant selector */
 
-footer p {
+/* footer p {
   font-size: 16px;
-}
+} */
 
 /* This is to show an example where this can create issues */
 /* Our intention was to style the p inside the header in the top portion */
@@ -65,6 +65,28 @@ footer p {
 } */
 
 /* So the solution for this is a nested descendant selector */
-article header p {
+/* article header p {
   font-style: italic;
+} */
+
+/* A better approach for the above problem is to use the "id" or "class" selector */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+/* We are now allowed to repeat id names , but classes can be mentioned in multiple places */
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related-posts {
+  list-style: none;
 }
