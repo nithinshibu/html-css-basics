@@ -108,3 +108,48 @@ aside {
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
 }
+
+/* Pseudo-classes */
+
+/* we need to select the first item in each <li> element */
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+li:nth-child(2) {
+  color: rebeccapurple;
+}
+/* we can use the keywords : even or odd */
+
+li:nth-child(even) {
+  color: red;
+}
+
+/* Lets clear a common misconception related to pseudo-classes */
+
+/* Lets say we wanted to select the first paragraoh element inside of the article */
+
+/* We can see that nothing happened in the page and blue color was not applied */
+
+/* So the misconception here was that it should have selected the first <p> element inside the article  */
+
+/* But this is not how the first child pseudo class in css works */
+
+/* In our current code , we can see that <p> element is not the first child of the article , instead <header> is the first child of the article */
+
+/* THIS WILL NOT WORK */
+article p:first-child {
+  color: blue;
+}
+
+/* But the below code will work as , we have a <p> as last child of article */
+
+article p:last-child {
+  color: #aaaa04;
+}
+
+/* So basically what this means is that , when we mix multiple elements  inside of a parent element then these pseudo-classes dont work really well */
