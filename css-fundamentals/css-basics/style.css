@@ -185,3 +185,27 @@ a:active {
   background-color: black;
   font-style: italic;
 }
+
+/* Resolving conflicts */
+
+/* The footer text will have the red color as the ID selector is having more specificity (priority) */
+/* 
+#copyright {
+  color: red;
+} */
+
+/* Now if the ID selector above was not present , then the .text class rule will be applied as both are having same priority but .text is written last , so only the latest style will be applied in case of conflicting styles */
+
+/* .copyright {
+  color: blue;
+}
+
+.text {
+  color: yellow;
+} */
+
+/* If all of the above are commented then the green color will be applied */
+/* 
+footer p {
+  color: green;
+} */
