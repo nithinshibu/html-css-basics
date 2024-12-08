@@ -132,4 +132,167 @@ rgb(69,69,69)
 rgb(183,183,183)
 #b7b7b7
 
+============================================================
+                      PAGE BREAK                         
+============================================================
+
+
+============================================================
+                      CSS THEORY #1: Conflicts Between Selectors                         
+============================================================
+
+ <p id="author-text" class="author">
+          Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+        </p>
+
+.author{
+  font-style:italic;
+  font-size:18px;
+}
+
+#author-text{
+  font-size:20px;
+}
+
+p, li{
+  font-family: sans-serif;
+  color:#444;
+  font-size:22px;
+}
+
+So in this example, there are 3 rules applied to one element.
+
+Which of the rules applies to the element?
+
+The answer is :- all of them applies to the <p> element.
+
+But when we see those rules , there is a conflicting font size declarations for <p> element.
+
+So for the <p> which will be the font size applied ? 18px , 20px or 22 px?
+
+
+CSS Selectors Specificity Hierarchy
+
+In CSS, specificity determines which rules take precedence when multiple selectors apply to the same element. Here's a quick note summarizing CSS specificity from highest to lowest:
+
+1. Inline Styles (Highest Specificity)
+- Applied directly to an element using the `style` attribute.
+- Example:
+  <div style="color: red;">Text</div>
+- Specificity: 1000
+
+2. IDs
+- Selectors using the `#id` pattern target specific elements by their unique ID.
+- Example:
+  #myId {
+    color: blue;
+  }
+- Specificity: 100
+
+3. Classes, Attributes, and Pseudo-classes
+- Includes `.class`, `[attribute]`, and `:pseudo-class` selectors.
+- Examples:
+  .myClass {
+    color: green;
+  }
+
+  [type="text"] {
+    background: yellow;
+  }
+
+  :hover {
+    text-decoration: underline;
+  }
+- Specificity: 10
+
+4. Elements and Pseudo-elements (Lowest Specificity)
+- Includes element selectors (e.g., `div`, `p`) and pseudo-elements (e.g., `::before`, `::after`).
+- Examples:
+  div {
+    margin: 10px;
+  }
+
+  ::before {
+    content: "Hello";
+  }
+- Specificity: 1
+
+Universal selector(*) has the lowest priority of them all.
+
+
+General Rules:
+1. Higher specificity wins: Inline styles will override IDs, IDs will override classes, and so on.
+2. Specificity ties: The latter rule in the stylesheet or document wins (the rule written last applies).
+3. Important declaration (`!important`) overrides everything: 
+   p {
+     color: blue !important;
+   }
+   The `!important` rule takes precedence regardless of specificity.
+
+
+Practical Example:
+HTML:
+<div id="uniqueId" class="myClass">
+  Hello, world!
+</div>
+
+CSS:
+div {
+  color: black; /* Specificity: 1 */
+}
+
+.myClass {
+  color: green; /* Specificity: 10 */
+}
+
+#uniqueId {
+  color: blue; /* Specificity: 100 */
+}
+
+div#uniqueId.myClass {
+  color: red; /* Specificity: 111 */
+}
+
+- The text "Hello, world!" will be red, as the last rule has the highest specificity (111).
+
+
+Tips to Manage Specificity:
+- Avoid overusing IDs; prefer classes for reusability.
+- Use simple selectors and minimize nesting.
+- Use `!important` sparingly and only when absolutely necessary.
+
+
+<p id="author-text" class="author">
+          Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027
+        </p>
+
+.author{
+  font-style:italic;
+  font-size:18px;
+}
+
+#author-text{
+  font-size:20px;
+}
+
+p, li{
+  font-family: sans-serif;
+  color:#444;
+  font-size:22px;
+}
+
+The rule with the highest specificity wins if there is a conflict.
+#author-text (specificity 0-1-0) is more specific than .author (0-0-1) and p (0-0-0).
+Therefore, the font-size: 20px; defined in the #author-text rule will be applied.
+The font size applied to the <p> element is 20px.
+
+The other properties like font-style: italic; (from .author) and font-family: sans-serif; (from p) will still be applied since they are not overridden by a more specific rule.
+
+So the Hierarchy goes like (Highest to lowest)
+1) Declarations marked as (!important)
+2) Inline style 
+3) ID(#)selector
+4) Class(.) or pseudo-class(:) selector
+5) Element selector (p,div,li etc)
+6) Universal Selector (*)
 
