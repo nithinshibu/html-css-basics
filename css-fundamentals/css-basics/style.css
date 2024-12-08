@@ -1,3 +1,42 @@
 h1 {
-  color: red;
+  font-size: 26px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+/* This is normal , just because h1 is the main heading
+  we can give a bigger font size to h2 or any other elements based on our need
+*/
+
+h2 {
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+h3 {
+  font-size: 30px;
+  font-family: sans-serif;
+}
+
+h4 {
+  font-size: 20px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  /* This text align will align the element to the center of the parent element */
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  font-family: sans-serif;
+  /* In case of line height we don't have to use a "unit" */
+  /* also 1.5 means 1.5 times the font size */
+  line-height: 1.5;
+}
+
+li {
+  font-family: sans-serif;
+  /* The deafult font size is 16px */
+  font-size: 20px;
 }
