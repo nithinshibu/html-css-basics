@@ -71,3 +71,65 @@ and we will link that css file to the html file by :-
     <title>HTML Basics</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
+============================================================
+                      PAGE BREAK                         
+============================================================
+
+Representing Colors
+
+1) RGB Model
+
+RGB Model : Every color can be represented by a combination of RED,GREEN,BLUE.
+
+Each of the 3 base colors can take a value from 0 to 255 , which leads to 16.8 million different colors.
+
+Red - RGB (R-255,G-0,B-0)
+Green - RGB (R-0,G-255,B-0)
+Blue - RGB (R-0,G-0,B-255)
+
+White - RGB (R-255,G-255,B-255)
+Black - RGB (R-0,G-0,B-0)
+
+----Defining Colors in CSS----
+
+1) RGB/RGBA Notation
+
+rgb(0,255,255)
+
+rgb(244,179,63)
+
+----RGB with transparency (RGBA) ----
+// A stands for alpha
+
+rgba(0,255,255,0.3)
+
+2) Hexadecimal Notation
+
+Instead of using a scale from 0 to 255 , we will be using 0 to ff (255 in hexadecimal numbers)
+
+#00ffff
+
+#f4b33f
+
+We can also use a shorthand , when all the colors are identical pairs
+
+#0ff
+
+
+In practise , we mostly use the hexadecimal colors and rgba when we need transparency.
+
+-----SHADES OF GREY-----
+
+When colors in all 3 channels are the same we get a grey color.
+
+There are 256 pure grays to choose from
+
+rgb(69,69,69) 
+#444
+
+
+rgb(183,183,183)
+#b7b7b7
+
+
