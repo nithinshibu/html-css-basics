@@ -1,0 +1,42 @@
+CSS - Cascading Style Sheets
+
+CSS describes the visual style and presentation of the content written in HTML.
+
+
+h1
+{
+ color: blue;
+ text-align:center;
+ font-size:20px;
+
+}
+
+In this "h1" --> Selector
+
+"font-size:20px;" --> Declaration /Style
+"font-size" --> Property
+
+"20px" --> Value
+
+The below entire area is called as "Declaration Block"
+{
+ color: blue;
+ text-align:center;
+ font-size:20px;
+
+}
+
+So the "Selector + Declaration Block" is called a "CSS Rule".
+
+============================================================
+                      PAGE BREAK                         
+============================================================
+
+We can write CSS in 3 places 
+1) Inline CSS
+2) Internal CSS
+3) External CSS
+
+
+
+
