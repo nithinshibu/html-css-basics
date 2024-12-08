@@ -1,6 +1,18 @@
+/* Instead of repeating the same style in each element , we can group the elements   */
+
+/* This is one way of combining selectors */
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+}
+
 h1 {
   font-size: 26px;
-  font-family: sans-serif;
   text-transform: uppercase;
   font-style: italic;
 }
@@ -11,17 +23,14 @@ h1 {
 
 h2 {
   font-size: 40px;
-  font-family: sans-serif;
 }
 
 h3 {
   font-size: 30px;
-  font-family: sans-serif;
 }
 
 h4 {
   font-size: 20px;
-  font-family: sans-serif;
   text-transform: uppercase;
   /* This text align will align the element to the center of the parent element */
   text-align: center;
@@ -29,14 +38,33 @@ h4 {
 
 p {
   font-size: 22px;
-  font-family: sans-serif;
   /* In case of line height we don't have to use a "unit" */
   /* also 1.5 means 1.5 times the font size */
   line-height: 1.5;
 }
 
 li {
-  font-family: sans-serif;
   /* The deafult font size is 16px */
   font-size: 20px;
+}
+
+/* Another way of combining selectors */
+/* we need to reduce the font size of paragraph (child) inside the footer (parent) */
+/* This is called descendant selector */
+
+footer p {
+  font-size: 16px;
+}
+
+/* This is to show an example where this can create issues */
+/* Our intention was to style the p inside the header in the top portion */
+/* but this approach will apply the style in all <p> coming inside a <header> */
+
+/* header p {
+  font-style: italic;
+} */
+
+/* So the solution for this is a nested descendant selector */
+article header p {
+  font-style: italic;
 }
