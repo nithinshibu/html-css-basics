@@ -1,0 +1,141 @@
+The CSS box model decides how the elements are displayed on the web page and how they are sized.
+
+So in the box model , each and every element on the web page can be seen as a rectangular box and each of these boxes can have content , a border and a space inside and outside of it.
+
+*******************************************************
+                  CSS BOX MODEL EXPLAINED                  
+*******************************************************
+
+The CSS Box Model is the foundation of web layout and design.
+It represents every HTML element as a rectangular box made up of
+the following areas, from inside out:
+
++---------------------------------------------------+
+|                     MARGIN                        | 
+|   (Space outside the element; transparent)        |
+|                                                   |
+|   +-------------------------------------------+   |
+|   |                  BORDER                   |   |
+|   |   (Surrounds the padding and content)     |   |
+|   |                                           |   |
+|   |   +-----------------------------------+   |   |
+|   |   |             PADDING               |   |   |
+|   |   |  (Space between content and       |   |   |
+|   |   |   the border; transparent)        |   |   |
+|   |   |                                   |   |   |
+|   |   |   +---------------------------+   |   |   |
+|   |   |   |        CONTENT            |   |   |   |
+|   |   |   |   (Actual text, image,    |   |   |   |
+|   |   |   |    or element content)    |   |   |   |
+|   |   |   +---------------------------+   |   |   |
+|   |   +-----------------------------------+   |   |
+|   +-------------------------------------------+   |
++---------------------------------------------------+
+
+*******************************************************
+              Key Areas of the Box Model              
+*******************************************************
+1. **Content**: 
+   The actual element content like text, images, etc.
+
+2. **Padding**: 
+   Clears space around the content. It's inside the border
+   and transparent.
+
+3. **Border**: 
+   A boundary that wraps around the padding and content.
+   It can have thickness, color, and style (solid, dashed, etc.).
+
+4. **Margin**: 
+   Clears space outside the border, separating the element
+   from other elements. It's transparent.
+
+
+[==== Content ====]
+
+This is the actual content of the element , it can be text or images or a table or a video or really any other content we might specify.
+
+Using CSS properties we can specify both the height and width of the content.
+
++---------------------------+ 
+|       Content             |
+|                           |
+|      width x height       |
+|                           |
++---------------------------+
+
+
+[==== Border ====]
+
+A line around the element still inside of the element.
+
+[==== Padding ====]
+
+Padding is the invisible white space that we can create around the elements content and it is between the content and the border.
+
+Padding is the empty space which we can create inside of elements.
+
+[==== Margin ====]
+
+Margin creates the empty space around the element, so outside the element itself.
+
+For example if we need space between two certain elements , we simply specify the margin property on one of them.
+
+[==== Fill Area ====]
+
+Area that gets filled with background color or background image.
+
+Remember that the text content and images are inside the content box right?
+Now the same doesn't apply for the background images or background color of an element.
+
+These properies will not only be applied to the content area but to the entire fill area which also includes the padding and the border.
+
+So basically if we apply a background image or color , it will occupy the entire visible part of the element.
+
+┌──────────────────────────────────────────────┐
+│                 MARGIN (outer space)         │
+│  (Not part of Fill Area; creates separation) │
+│                                              │
+│   ┌──────────────────────────────────────┐   │
+│   │               BORDER                 │   │
+│   │  (Outer edge of the Fill Area)       │   │
+│   │   ┌──────────────────────────────┐   │   │
+│   │   │            PADDING           │   │   │
+│   │   │ (Space inside the border;    │   │   │
+│   │   │  surrounds the content)      │   │   │
+│   │   │                              │   │   │
+│   │   │   ┌──────────────────────┐   │   │   │
+│   │   │   │      CONTENT AREA    │   │   │   │
+│   │   │   │ (Text, images, etc.) │   │   │   │
+│   │   │   └──────────────────────┘   │   │   │
+│   │   │                              │   │   │
+│   │   └──────────────────────────────┘   │   │
+│   └──────────────────────────────────────┘   │
+│                                              │
+└──────────────────────────────────────────────┘
+
+[====If box-sizing: content-box====]
+
+Fill Width  = Content Width + Padding (left + right) + Border (left + right)
+Fill Height = Content Height + Padding (top + bottom) + Border (top + bottom)
+
+[====If box-sizing: border-box====]
+
+Fill Width = Specified Width (includes content, padding, and border)
+Fill Height = Specified Height (includes content, padding, and border)
+
+We can specify the height and the width of the content area, if we choose not to define the height or width then the box model will simply imply them based on the content.
+
+However these specified or implied heights and width are actually not the final sizes of the element and that is because the border and the padding is also taken into consideration.
+
+Final element width = left border + left padding + width + right padding + right border.
+
+Final element height = top border + top padding + height + bottom padding + bottom  border.
+
+And here we can see that the margin is of course not part of the height and width calculations of the elements.
+
+
+
+
+
+
