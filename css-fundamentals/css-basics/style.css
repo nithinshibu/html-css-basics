@@ -2,7 +2,19 @@
 
 /* This is one way of combining selectors */
 
-h1,
+/* Demonstrating inheritance concepts for <body> */
+
+body {
+  /* Nothing will happen in this case , as even though this red color will be inherited , the other elements have a style of its own for the text color */
+  /* color: red; */
+
+  /* Here we are applying all the common styles */
+
+  color: #444;
+  font-family: sans-serif;
+}
+
+/* h1,
 h2,
 h3,
 h4,
@@ -10,7 +22,7 @@ p,
 li {
   font-family: sans-serif;
   color: #444;
-}
+} */
 
 h1,
 h2,
@@ -209,3 +221,7 @@ a:active {
 footer p {
   color: green;
 } */
+
+nav a:link {
+  font-size: 18px;
+}

@@ -170,8 +170,7 @@ But when we see those rules , there is a conflicting font size declarations for 
 
 So for the <p> which will be the font size applied ? 18px , 20px or 22 px?
 
-
-CSS Selectors Specificity Hierarchy
+[==== CSS Selectors Specificity Hierarchy ====]
 
 In CSS, specificity determines which rules take precedence when multiple selectors apply to the same element. Here's a quick note summarizing CSS specificity from highest to lowest:
 
@@ -295,4 +294,92 @@ So the Hierarchy goes like (Highest to lowest)
 4) Class(.) or pseudo-class(:) selector
 5) Element selector (p,div,li etc)
 6) Universal Selector (*)
+
+============================================================
+                      CSS THEORY #2: Inheritance and Universal Selector                        
+============================================================
+
+An inherited property is very easily overwritten by any rule which has a value for that same property.
+
+Inhertited valus are the ones which has the lowest priority.
+
+body {
+  color: #444;
+  font-family: sans-serif;
+}
+
+Here the elements are inheriting values for certain properties from one another , so these are not conflicting selectors or this body {} selector is not selecting all of these elements.
+
+It doesnot apply to all the elements.
+
+So the properties like color and font-family which we declared in the body is simply passed down to all the child elements that are contained within the body.
+
+
+Not all properties will be inherited by other elements. For example :-
+
+body {
+  color: #444;
+  font-family: sans-serif;
+  border-top: 10px solid #1098ad;
+}
+
+This border-top will be applied only for the body element and not all other child elements will have this style applied to it and that would be very impractical.
+
+╔════════════════╗
+║  Notes         ║
+╚════════════════╝
+
+- Not all properties get inherited , it's mostly ones related to text:
+font-family, font-size,font-weight,font-style,color,line-height,letter-spacing,text-align,text-transform,text-shadow,list-style etc.
+
+Suppose , lets say 
+
+ <nav>
+        <a href="blog.html">Blog</a>
+        <a href="#">Challenges</a>
+        <a href="#">Flexbox</a>
+        <a href="#">Grid</a>
+      </nav>
+
+nav a:link {
+  font-size: 18px;
+}
+
+We want to have a paragraph also which needs to inherit this 18px
+
+ <nav>
+        <p>This is navigation</p>
+        <a href="blog.html">Blog</a>
+        <a href="#">Challenges</a>
+        <a href="#">Flexbox</a>
+        <a href="#">Grid</a>
+</nav>
+
+So for that we can do something like 
+
+nav a:link ,
+nav p
+ {
+  font-size: 18px;
+}
+
+
+But a more simliar approach will be 
+
+nav{
+  font-size: 18px;
+}
+
+So in this case , if we haven't specify a style for <p> and <a>, normally it will inherit the font size for <nav> .
+
+
+If we want to apply a certain style to each and every element then we can use the universal selector.
+
+*{
+  border-top: 10px solid #1098ad;
+}
+
+This border top will be applied to each and every element, this example is little funny , but universal selector can come in handy at certain situations.
+
+Universal selector has the lowest priority.
 
