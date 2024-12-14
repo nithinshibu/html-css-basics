@@ -1,0 +1,281 @@
+/* Instead of repeating the same style in each element , we can group the elements   */
+
+/* This is one way of combining selectors */
+
+/* This global reset is extremely common  */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Demonstrating inheritance concepts for <body> */
+
+body {
+  /* Nothing will happen in this case , as even though this red color will be inherited , the other elements have a style of its own for the text color */
+  /* color: red; */
+
+  /* Here we are applying all the common styles */
+
+  color: #444;
+  font-family: sans-serif;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  /* ------------- */
+  /* Padding of 20 px on all sides evenly */
+  /* padding: 20px; */
+  /* ------------- */
+  /* Padding applied differently on each side */
+  /* padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px; */
+  /* ------------- */
+  /* Shorthand way of writing the same */
+  /* top and bottom - 10px  */
+  /* left and right - 20px  */
+  padding: 20px 40px;
+  /* ------------- */
+  padding: 10px 40px 15px 30px;
+  /* Top: 10px
+    Right: 40px
+    Bottom: 15px
+    Left: 30px
+ */
+  /* ------------- */
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  /* border: 5px solid #1098ad; */
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+  padding: 50px 0;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444;
+} */
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+/* This is normal , just because h1 is the main heading
+  we can give a bigger font size to h2 or any other elements based on our need
+*/
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  /* This text align will align the element to the center of the parent element */
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  /* In case of line height we don't have to use a "unit" */
+  /* also 1.5 means 1.5 times the font size */
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+}
+
+li {
+  /* The deafult font size is 16px */
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+/* no need to specify any unit for zero */
+/* li:last-child {
+  margin-bottom: 0;
+  
+} */
+
+/* Another way of combining selectors */
+/* we need to reduce the font size of paragraph (child) inside the footer (parent) */
+/* This is called descendant selector */
+
+/* footer p {
+  font-size: 16px;
+} */
+
+/* This is to show an example where this can create issues */
+/* Our intention was to style the p inside the header in the top portion */
+/* but this approach will apply the style in all <p> coming inside a <header> */
+
+/* header p {
+  font-style: italic;
+} */
+
+/* So the solution for this is a nested descendant selector */
+/* article header p {
+  font-style: italic;
+} */
+
+/* A better approach for the above problem is to use the "id" or "class" selector */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+/* We are now allowed to repeat id names , but classes can be mentioned in multiple places */
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style: none;
+}
+
+/* Pseudo-classes */
+
+/* we need to select the first item in each <li> element */
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+li:nth-child(2) {
+  color: rebeccapurple;
+}
+/* we can use the keywords : even or odd */
+
+li:nth-child(even) {
+  color: red;
+}
+
+/* Lets clear a common misconception related to pseudo-classes */
+
+/* Lets say we wanted to select the first paragraoh element inside of the article */
+
+/* We can see that nothing happened in the page and blue color was not applied */
+
+/* So the misconception here was that it should have selected the first <p> element inside the article  */
+
+/* But this is not how the first child pseudo class in css works */
+
+/* In our current code , we can see that <p> element is not the first child of the article , instead <header> is the first child of the article */
+
+/* THIS WILL NOT WORK */
+/* article p:first-child {
+  color: blue;
+} */
+
+/* But the below code will work as , we have a <p> as last child of article */
+
+/* article p:last-child {
+  color: #aaaa04;
+} */
+
+/* So basically what this means is that , when we mix multiple elements  inside of a parent element then these pseudo-classes dont work really well */
+
+/*----------------------------Styling links---------------------------- */
+/* This is not a good practise , instead we need to style a pseudo class of the anchor because then it will allow us to target different states  */
+
+/* a {
+  color: #1098ad;
+} */
+
+/* By specifying the link pseudo class , this will only target the actual links , which means the <a> tag with href attribute only will be targeted  */
+
+/* L V H A  */
+/* Link Visited Hover Active */
+
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad;
+}
+
+a:hover {
+  color: #17c3de;
+  font-weight: bold;
+  text-decoration: underline dotted #17c3de;
+}
+
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+
+/* Resolving conflicts */
+
+/* The footer text will have the red color as the ID selector is having more specificity (priority) */
+/* 
+#copyright {
+  color: red;
+} */
+
+/* Now if the ID selector above was not present , then the .text class rule will be applied as both are having same priority but .text is written last , so only the latest style will be applied in case of conflicting styles */
+
+/* .copyright {
+  color: blue;
+}
+
+.text {
+  color: yellow;
+} */
+
+/* If all of the above are commented then the green color will be applied */
+/* 
+footer p {
+  color: green;
+} */
+
+nav a:link {
+  font-size: 18px;
+}

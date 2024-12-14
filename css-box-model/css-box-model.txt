@@ -134,6 +134,102 @@ Final element height = top border + top padding + height + bottom padding + bott
 
 And here we can see that the margin is of course not part of the height and width calculations of the elements.
 
+.main-header {
+  background-color: #f7f7f7;
+
+  /* --------------------------------- */
+  /* Uniform Padding (20px on all sides) */
+  /* padding: 20px; */
+  /* --------------------------------- */
+
+  /* Padding applied differently for each side:
+     - Left: 40px
+     - Right: 40px
+     - Top: 20px
+     - Bottom: 20px */
+  /*
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  */
+  /* --------------------------------- */
+
+  /* Shorthand for the above:
+     - Top & Bottom: 20px
+     - Left & Right: 40px */
+  /* padding: 20px 40px; */
+  /* --------------------------------- */
+
+  /* Shorthand with four values:
+     - Top: 10px
+     - Right: 40px
+     - Bottom: 15px
+     - Left: 30px */
+  padding: 10px 40px 15px 30px;
+
+  /* Breakdown:
+     Top: 10px
+     Right: 40px
+     Bottom: 15px
+     Left: 30px */
+  /* --------------------------------- */
+}
+
+
+Same applies for margin also 
+
+li {
+  /* The deafult font size is 16px */
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+  /* no need to specify any unit for zero */
+}
+
+[=====Global Reset====]
+
+This global reset is extremely common  and whenever we start a new project it good to reset these in the universal selector.
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+[=====Collapsing Margin concept====]
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+
+p {
+  font-size: 22px; 
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+So the paragraph comes above the h3 element and the paragraph is having a margin bottom of 15 px and the h3 element is having a margin top of 40px.
+
+Here we might think that these 2 spaces do get added up but that is not what happens
+
+╔════════════════╗
+║  Notes         ║
+╚════════════════╝
+
+The distance between these elements will be 40 pixels and it is not 55 pixels.
+
+
+This phenomena is called collapsing margins.
+
+So basically when we have two margins that occupy the same space, only one of them is actually visible on the page and that is usually the larger of the two.
+
+
 
 
 
