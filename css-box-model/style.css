@@ -45,6 +45,7 @@ body {
  */
   /* ------------- */
   margin-bottom: 60px;
+  height: 80px;
 }
 
 .post-header {
@@ -63,6 +64,7 @@ aside {
   /* padding-top: 50px;
   padding-bottom: 50px; */
   padding: 50px 0;
+  width: 500px;
 }
 
 /* h1,
@@ -279,3 +281,14 @@ footer p {
 nav a:link {
   font-size: 18px;
 }
+
+.post-img {
+  /* So here the width will be the 100% of the size of the parent container which in this case is the <header> */
+  width: 100%;
+  /* width: 800px; */
+  /* In the html for the image we have mentioned a height and to fix the aspect ratio , we just have to mention the height as auto */
+  /* Setting the height to auto is only necessary , if that height is already specified before in html */
+  height: auto;
+}
+
+/* In case if we don't specify any image dimensions in HTML, then if we set the height or width in css , then the other one will automatically adapt in order to account for the original aspect ratio of the image */
