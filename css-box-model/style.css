@@ -20,6 +20,16 @@ body {
   font-family: sans-serif;
 }
 
+/* The child element can never be wider than the parent element */
+/* So all the other elements inside the container will be 700px width */
+/* CENTERING OUR PAGE */
+.container {
+  width: 800px;
+  /* Here we are setting the margin left and right to auto   */
+  /* This means that the margin on the left needs to be the same with the margin on the right side and they both should be calculated automatically by the browser */
+  margin: 0 auto;
+}
+
 .main-header {
   background-color: #f7f7f7;
   /* ------------- */

@@ -135,3 +135,13 @@ Prefer percentages (%) or relative units (em, rem) for responsive design.
 Use min-width, max-width, min-height, and max-height for better control over resizing behavior.
 
 Combine box-sizing: border-box with padding and borders to prevent size issues.
+
+
+[====CENTERING OUR PAGE====]
+
+.container {
+  width: 800px;
+  /* Here we are setting the margin left and right to auto   */
+  /* This means that the margin on the left needs to be the same with the margin on the right side and they both should be calculated automatically by the browser */
+  margin: 0 auto;
+}
