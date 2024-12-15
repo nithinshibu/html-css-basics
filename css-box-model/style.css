@@ -55,7 +55,7 @@ body {
  */
   /* ------------- */
   margin-bottom: 60px;
-  height: 80px;
+  /* height: 80px; */
 }
 
 .post-header {
@@ -141,7 +141,7 @@ li {
 /* no need to specify any unit for zero */
 /* li:last-child {
   margin-bottom: 0;
-  
+
 } */
 
 /* Another way of combining selectors */
@@ -267,7 +267,7 @@ a:active {
 /* Resolving conflicts */
 
 /* The footer text will have the red color as the ID selector is having more specificity (priority) */
-/* 
+/*
 #copyright {
   color: red;
 } */
@@ -283,14 +283,21 @@ a:active {
 } */
 
 /* If all of the above are commented then the green color will be applied */
-/* 
+/*
 footer p {
   color: green;
 } */
 
 nav a:link {
   font-size: 18px;
+  /* display: inline-block;
+  margin-right: 30px;
+  margin-top: 30px; */
 }
+
+/* nav a:link:last-child {
+  margin-right: 0;
+} */
 
 .post-img {
   /* So here the width will be the 100% of the size of the parent container which in this case is the <header> */
@@ -302,3 +309,12 @@ nav a:link {
 }
 
 /* In case if we don't specify any image dimensions in HTML, then if we set the height or width in css , then the other one will automatically adapt in order to account for the original aspect ratio of the image */
+
+/* nav a:link { */
+/* background-color: orange; */
+/* margin was applied only horizontally  */
+/* margin: 20px; */
+/* padding: 20px; */
+/*! This will render the inline element as a block level element */
+/* display: block; */
+/* } */

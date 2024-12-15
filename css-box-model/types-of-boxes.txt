@@ -1,0 +1,143 @@
+Types of Boxes in CSS
+
+In CSS, every element generates a rectangular box that determines how content is displayed. These boxes can be categorized into different types based on their display properties and layout behavior.
+
+1. Block Elements
+
+Block elements generate a block-level box. These elements occupy the entire width of their parent container by default and always start on a new line. Examples include <div>, <p>, <h1>-<h6>, <section>, and <article>.
+
+Characteristics:
+
+Starts on a new line.
+
+Occupies the full width of the container (by default).
+
+Can have width, height, margin, and padding properties applied.
+
+Common Properties:
+
+display: block;
+
+Width: Can be explicitly set or defaults to 100% of the container.
+
+Height: Can be explicitly set; defaults to the content height if not specified.
+
+Example:
+
+<div style="background: lightblue;">This is a block element</div>
+<p style="background: lightgreen;">This is another block element</p>
+
+2. Inline Elements
+
+Inline elements generate an inline-level box. These elements only occupy as much width as necessary and do not start on a new line. Examples include <span>, <a>, <strong>, <em>, and <img>.
+
+Characteristics:
+
+Does not start on a new line.
+
+Occupies only the necessary width.
+
+Cannot have width and height explicitly set (ignored if applied).
+
+Can have margin and padding, but only horizontally.
+
+Common Properties:
+
+display: inline;
+
+Example:
+
+<span style="background: lightcoral;">This is an inline element</span>
+<a href="#" style="background: lightyellow;">This is another inline element</a>
+
+3. Inline-Block Elements
+
+Inline-block elements combine features of both inline and block elements. They flow like inline elements but can have width, height, margin, and padding set.
+
+Characteristics:
+
+Does not start on a new line.
+
+Can have width, height, margin, and padding properties applied.
+
+Useful for layout purposes where inline behavior is needed with block-like control.
+
+Common Properties:
+
+display: inline-block;
+
+Example:
+
+<div style="display: inline-block; width: 100px; height: 50px; background: lightgray;">This is an inline-block element</div>
+
+============================================================
+                      PAGE BREAK                         
+============================================================
+
+
+So the types of boxes that only occupy exactly the space that they need for it's content is what we call inline boxes.
+
+Then the block level boxes or block level elements occupy all the space that they can and they basically create line breaks after them or they cannot be side by side with one another.
+
+
+╔════════════════╗
+║  Notes         ║
+╚════════════════╝
+
+[====Block Level Elements====]
+
+- Elements are formatted visually as blocks.
+- Elements occupy 100% of parent element's width, no matter the content.
+- Elements are stacked vertically by default, one after the another.
+
+Default elements :-
+
+body , main , header , footer , section , nav , aside , div , h1 - h6 , p , ul, ol, li etc.
+
+With CSS :-
+
+display: block
+
+[====Inline Elements====]
+
+- Occupies only the space necessary for its content.
+- Causes no line breaks after or before the element.
+- Box model applies in a different way : heights and widths do not apply.
+- Padding and margins are applied only horizontally (left and right).
+
+
+Default elements :- 
+
+a , img , strong , em , button etc
+
+With CSS :
+
+display : inline
+
+
+[====Inline-Block Elements====]
+
+- Looks like inline from the outside but behaves like block level on the inside.
+
+- Occupies only content's space and causes no line breaks.
+
+- Box model applies which means we can use margin and padding, also we can use width and height.
+
+With CSS :
+
+display : inline-block
+
+
+nav a:link {  
+  display: inline-block;
+  margin-right: 30px;
+  /* usually margin-top will not be applied for an inline element, so we made the display as inline block and now the margin top will be applied for the anchor tag */
+  margin-top: 30px;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+Images are inline elements but they do behave like inline block elements.
+
